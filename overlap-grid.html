@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overlapp grid</title>
+
+    <style>
+
+        .center-center{
+            width: 100%;
+            padding: 2rem;
+            display: grid;
+            place-items: center;
+
+            background-color: hsla(202, 0%, 70%, 100%);
+        }
+
+        .overlay-grid{
+            display: grid;
+            grid-template-columns: 1fr minmax(0, 40ch) 1fr;
+            grid-template-rows: 20% 2fr auto 1fr;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .img-placement{
+            width: 100%;
+
+            grid-column: 1/3;
+            grid-row: 1/7;
+        }
+
+        .overlay-box{
+            grid-column: 2/5;
+            grid-row: 3/4;
+            background-color: hsla(202, 0%, 90%, 100%);
+            padding: 2rem;
+        }
+
+        .shadow-corner{
+            border-radius: 7px;
+            box-shadow: hsla(202, 0%, 10%, 60%);
+        }
+
+        .mirror_img{
+            position: relative;
+            z-index: 5;
+            grid-column: 2/4;
+        }
+
+        .mirror_overlay-box{
+            grid-column: 1/3;
+        }
+
+
+
+    </style>
+
+        <div class="center-center">
+            <div class="overlay-grid">
+                <img class="img-placement mirror_img shadow-corner" src="./img/hummingbird-5111260_640.jpg" alt="A bird">
+                <div class="overlay-box mirror_overlay-box  shadow-corner">
+                    <div class="overlay-box__heading">
+                        <h2>using CSS grid for ooverlapping content </h2>
+                    </div>
+                    <div class="overlay-box__content">
+                        <p>This is a more advantes use case for CSS grid. here 
+                            we will overlap two pices of content using the
+                            placement rules from Grid. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="center-center">
+            <div class="overlay-grid">
+                <img class="img-placement shadow-corner" src="./img/hummingbird-5111260_640.jpg" alt="A bird">
+                <div class="overlay-box shadow-corner">
+                    <div class="overlay-box__heading">
+                        <h2>using CSS grid for ooverlapping content </h2>
+                    </div>
+                    <div class="overlay-box__content">
+                        <p>This is a more advantes use case for CSS grid. here 
+                            we will overlap two pices of content using the
+                            placement rules from Grid. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</head>
+<body>
+
+
+    
+</body>
+</html>
